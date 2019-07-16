@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@drawable/backgroundimage">
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/translucent_image">
+        <!--FDD-->
+
+        <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/backtoauth"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+
+                    android:layout_marginLeft="10dp">
+
+                <ImageView
+
+                        android:id="@+id/signinback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/back"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+
+                />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REGISTER"
+                        android:textSize="22dp"
+                        android:textColor="#ADCCE2"
+                        android:layout_marginLeft="16dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                />
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+
+                    android:id="@+id/forgotPassword"
+                    android:layout_alignParentEnd="true"
+
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+            >
+
+                <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Forgot Password"
+                        android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+
+
+                    app:endIconDrawable="@drawable/ic_email_black_24dp"
+                    app:endIconMode="custom"
+                    app:endIconTint="@android:color/white"
+                    android:layout_marginBottom="10dp"
+
+                    app:endIconTintMode="src_atop"
+                    style="@style/TextLabel"
+                    android:textColorHint="@android:color/white"
+                    app:hintTextColor="@android:color/white"
+                    android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Email"
+
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="20dp"
+                        android:textColorHint="@android:color/white"
+
+                        android:inputType="textEmailAddress"
+
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+
+                    style="@style/TextLabel"
+                    android:layout_marginBottom="10dp"
+
+                    android:textColorHint="@android:color/white"
+                    android:theme="@style/TextLabel"
+                    app:passwordToggleTint="@android:color/white"
+                    app:passwordToggleEnabled="true"
+
+                    app:counterEnabled="true"
+                    app:counterTextColor="@android:color/white"
+
+                    app:hintTextColor="@android:color/white"
+
+
+                    android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+
+                        android:textColor="@android:color/white"
+                        android:hint="Password"
+                        android:layout_marginTop="20dp"
+                        android:textColorHint="@android:color/white"
+
+                        android:inputType="textPassword"
+
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SIGN IN"
+
+                    android:gravity="center"
+
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="12dp"
+                    android:textAppearance="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/white"
+
+                    android:textSize="16.5sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorAccent"
+                    app:cornerRadius="5dp"
+
+                    app:rippleColor="@color/colorPrimary"
+
+
+            />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dp"
+                    android:padding="1dp"
+                    android:text="or (Use google sign in)"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            <com.google.android.gms.common.SignInButton
+                    android:id="@+id/login_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1dp"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:text="Forgot Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+
+
+        </LinearLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+                android:visibility="gone"
+                android:id="@+id/avi"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorName="BallPulseSyncIndicator"
+        />
+    </RelativeLayout>
+</FrameLayout>

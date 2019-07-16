@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@drawable/backgroundimage">
+
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/translucent_image">
+
+
+        <LinearLayout
+                android:layout_marginBottom="50dp"
+                android:layout_above="@+id/signup"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <com.example.sokoni.CircleImageView
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/colorPrimary"
+
+
+                    android:src="@drawable/logo_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/signin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGN IN"
+                android:textSize="25dp"
+                android:textColor="#54abee"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="45dp"
+        />
+
+
+
+        <TextView
+                android:id="@+id/acc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have an account?"
+                android:textSize="16dp"
+                android:textColor="#c4c5c9"
+                android:gravity="center"
+                android:layout_above="@id/signin"
+                android:paddingBottom="16dp"
+        />
+
+        <LinearLayout
+                android:layout_centerVertical="true"
+                android:id="@+id/signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                android:background="@drawable/roundedrect"
+                android:padding="16dp"
+                android:orientation="horizontal"
+
+
+        >
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp">
+
+
+
+
+
+                <com.example.sokoni.CircleImageView
+
+
+                        app:civ_border_width="2dp"
+                        app:civ_fill_color="@android:color/white"
+                        app:civ_border_color="@color/colorAccent"
+
+                        android:src="@drawable/splashimage"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+
+                        android:paddingLeft="3dp"
+                        android:layout_gravity="center"
+                />
+
+
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:textSize="22dp"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"/>
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

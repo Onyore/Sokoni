@@ -1,10 +1,10 @@
 package com.example.sokoni.ui.auth
 
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -22,6 +22,11 @@ import com.example.sokoni.models.oauth.custom.Resource
 import com.example.sokoni.models.oauth.custom.Status
 import com.example.sokoni.utils.Validator
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_confirm_password_code.avi
+import kotlinx.android.synthetic.main.fragment_confirm_password_code.backtoauth
+import kotlinx.android.synthetic.main.fragment_confirm_password_code.recoverPassword
+import kotlinx.android.synthetic.main.fragment_confirm_password_code.signinback
+import kotlinx.android.synthetic.main.fragment_forget_password.*
 
 class ForgotPassword: Fragment() {
     companion object {

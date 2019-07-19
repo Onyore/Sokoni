@@ -1,10 +1,10 @@
 package com.example.sokoni.ui.auth
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import android.app.Application
-import android.arch.lifecycle.MediatorLiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.AndroidViewModel
-import com.example.sokoni.Storage.repository.SignInRepository
+
 import com.example.sokoni.Storage.repository.repository.RecoverPasswordUpRepository
 import com.example.sokoni.Storage.repository.repository.SignUpRepository
 import com.example.sokoni.models.oauth.Oauth

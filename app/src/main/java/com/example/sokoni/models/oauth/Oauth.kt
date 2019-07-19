@@ -26,7 +26,7 @@ class Oauth {
     var cart: Cart? = null
 
 
-    @Ignore constructor(profile: ContactsContract.Profile?) {
+    @Ignore constructor(profile: Profile) {
         this.profile = profile
     }
 

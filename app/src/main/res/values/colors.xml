@@ -10,7 +10,7 @@
 
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
-
+<color name="text_input_box_stroke">#fff</color>
     <color name="textSub">#76818a</color>
     <color name="Tex">#404547</color>
     <color name="White">#fff</color>

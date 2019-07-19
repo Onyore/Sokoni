@@ -1,6 +1,6 @@
 package com.example.sokoni.Storage.repository.daos
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.example.sokoni.models.oauth.Cart.Cart
 import java.nio.charset.CodingErrorAction.REPLACE
 

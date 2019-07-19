@@ -1,42 +1,26 @@
 package com.example.sokoni
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.os.Parcelable.Creator
+import androidx.core.content.ContextCompat.startActivity
+import com.example.sokoni.Storage.repository.PrefrenceManager
 
-
-class SplashScreenActivity() : AppCompatActivity(), Parcelable {
-
-    constructor(parcel: Parcel) : this() {
-    }
+class SplashScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this@SplashScreenActivity,AuthActivity::class.java))
 
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Creator<SplashScreenActivity> {
-        override fun createFromParcel(parcel: Parcel): SplashScreenActivity {
-            return SplashScreenActivity(parcel)
+        if(PrefrenceManager(this).getLoginStatus()==0){
+            startActivity(Intent(this@SplashScreenActivity,AuthActivity::class.java))
+            finish()
         }
-
-        override fun newArray(size: Int): Array<SplashScreenActivity?> {
-            return arrayOfNulls(size)
+        else{
+            startActivity(Intent(this@SplashScreenActivity,MainActivity::class.java))
+            finish()
         }
     }
-}
 
-open class AppCompatActivity {
+    }
 
-}
+

@@ -1,49 +1,137 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- Splashscreen Theme -->
-    <style name="SplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/splashimage</item>
 
+    <style name="AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:editTextColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
     </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-<style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
-    <item name="boxCornerRadiusBottomStart">1dp</item>
-    <item name="boxCornerRadiusBottomEnd">1dp</item>
-    <item name="boxCornerRadiusTopStart">1dp</item>
-    <item name="boxCornerRadiusTopEnd">1dp</item>
-    <!-- Hint color and label color in FALSE state -->
-    <item name="android:textColorHint">#fff</item>
 
-    <item name="android:textSize">20sp</item>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashimage</item>
+    </style>
 
-    <item name="boxStrokeWidth">2dp</item>
-    <item name="colorAccent">#fff</item>
-    <item name="colorControlNormal">#fff</item>
-    <item name="colorControlActivated">#fff</item>
+    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-</style>
-<style name="TextLabelDark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-    <item name="android:textColorHint">#000000</item>
-    <item name="android:textSize">20sp</item>
-    <item name="boxCornerRadiusBottomStart">1dp</item>
-    <item name="boxCornerRadiusBottomEnd">1dp</item>
-    <item name="boxCornerRadiusTopStart">1dp</item>
-    <item name="boxCornerRadiusTopEnd">1dp</item>
-    <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
-    <!-- item name="boxStrokeColor">@color/text_input_box_stroke</item -->
-    <item name="boxStrokeWidth">2dp</item>
-    <item name="colorAccent">#000000</item>
-    <item name="colorControlNormal">#000000</item>
-    <item name="colorControlActivated">#000000</item>
-</style>
+        <item name="boxCornerRadiusBottomStart">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">1dp</item>
+        <item name="boxCornerRadiusTopStart">1dp</item>
+        <item name="boxCornerRadiusTopEnd">1dp</item>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">#fff</item>
+
+        <item name="android:textSize">20sp</item>
+
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="colorAccent">#fff</item>
+        <item name="colorControlNormal">#fff</item>
+        <item name="colorControlActivated">#fff</item>
+    </style>
+
+    <style name="TextLabelDark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">#000000</item>
+
+        <item name="android:textSize">20sp</item>
+        <item name="boxCornerRadiusBottomStart">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">1dp</item>
+        <item name="boxCornerRadiusTopStart">1dp</item>
+        <item name="boxCornerRadiusTopEnd">1dp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="colorAccent">#000000</item>
+        <item name="colorControlNormal">#000000</item>
+        <item name="colorControlActivated">#000000</item>
+    </style>
+
+    <style name="AndroidImageSlider_Corner_Oval_Orange">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/indicator_corner_bg</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="shape">oval</item>
+        <item name="padding_left">3dp</item>
+        <item name="padding_right">3dp</item>
+        <item name="padding_top">4dp</item>
+        <item name="padding_bottom">4dp</item>
+
+        <item name="selected_color">#f60</item>
+        <item name="unselected_color">#ffffff</item>
+        <item name="selected_width">6dp</item>
+        <item name="selected_height">6dp</item>
+        <item name="unselected_width">6dp</item>
+        <item name="unselected_height">6dp</item>
+    </style>
+
+    <style name="AndroidImageSlider_Attractive_Rect_Blue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="shape">rect</item>
+        <item name="padding_left">3dp</item>
+        <item name="padding_right">3dp</item>
+        <item name="padding_top">4dp</item>
+        <item name="padding_bottom">4dp</item>
+
+        <item name="selected_color">#30CCE5</item>
+        <item name="unselected_color">#333333</item>
+        <item name="selected_width">13dp</item>
+        <item name="selected_height">4dp</item>
+        <item name="unselected_width">13dp</item>
+        <item name="unselected_height">4dp</item>
+    </style>
+
+    <style name="AndroidImageSlider_Magnifier_Oval_Black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="shape">oval</item>
+        <item name="padding_left">3dp</item>
+        <item name="padding_right">3dp</item>
+        <item name="padding_top">4dp</item>
+        <item name="padding_bottom">4dp</item>
+
+        <item name="selected_color">#333333</item>
+        <item name="unselected_color">#33000000</item>
+        <item name="selected_width">8dp</item>
+        <item name="selected_height">8dp</item>
+        <item name="unselected_width">6dp</item>
+        <item name="unselected_height">6dp</item>
+    </style>
+
+    <!-- set the rounded drawable as background to your bottom sheet -->
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet_dialog_fragment</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
 </resources>

@@ -1,9 +1,9 @@
 package com.example.sokoni.ui.auth
 
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -18,9 +18,10 @@ import com.example.sokoni.models.oauth.Oauth
 import com.example.sokoni.models.oauth.Profile
 import com.example.sokoni.models.oauth.custom.Resource
 import com.example.sokoni.models.oauth.custom.Status
+import com.example.sokoni.utils.Validator
 import com.google.android.material.snackbar.Snackbar
-import org.w3c.dom.Text
-import javax.xml.validation.Validator
+//import kotlinx.android.synthetic.main.fragment_sign_up.*
+
 
 class SignUpFragment : Fragment() {
     companion object{
@@ -110,7 +111,7 @@ fun signUp(){
             return false
         }
         when{
-            !TextUtils.isEmpty(mobile.txet)->if(!validator.isValidPhoneNumber(mobile.text.toString().replace("","").trim())){
+            !TextUtils.isEmpty(mobile.text)->if(!Validator.isValidPhoneNumber(mobile.text.toString().replace("","").trim())){
                 return false
             }
             else -> return false

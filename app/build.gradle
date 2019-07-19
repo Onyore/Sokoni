@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
 
@@ -12,7 +13,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,53 +21,67 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.6'
+    }
+    buildToolsVersion = '28.0.3'
 }
 dependencies {
-    implementation 'com.android.support:multidex:1.0.3'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
-    implementation 'com.google.android.material:material:1.1.0-alpha08'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
-    implementation 'com.google.firebase:firebase-core:17.0.1'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha02'
+    implementation 'com.google.firebase:firebase-messaging:17.4.0'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+    testImplementation 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha03'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha02'
-    implementation 'com.google.firebase:firebase-messaging:19.0.1'
-    implementation 'com.google.firebase:firebase-core:17.0.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation "androidx.room:room-runtime:2.2.0-alpha01"
-    apply plugin: 'application'
-    kapt "android.arch.persistence.room:compiler:2.1.0-alpha03"
-    annotationProcessor "androidx.room:room-compiler:2.2.0-alpha04" // use kapt for Kotlin
-    implementation 'com.google.android.material:material:1.1.0-alpha08'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation "androidx.room:room-runtime:2.1.0-alpha04"   // abstraction of the sql database
+    kapt 'androidx.room:room-compiler:2.0.0'
+    annotationProcessor "androidx.room:room-compiler:2.1.0-alpha04"  // use kapt for Kotlin
+    implementation 'com.google.android.material:material:1.1.0-alpha04'
     implementation 'com.wang.avi:library:2.1.3'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
-    implementation 'com.google.code.gson:gson:2.8.5'
+    // used to create coroutines for background thread managment
+    implementation 'com.google.code.gson:gson:2.8.5'  // used for making formatting api requests data
     implementation 'com.nineoldandroids:library:2.4.0'
-    implementation('com.github.bumptech.glide:glide:4.8.0')
-
-            {
+    implementation('com.github.bumptech.glide:glide:4.8.0') {  // used for making api requests
         transitive = true
         exclude group: 'com.android.support'
     }
-    apply plugin: 'kotlin'
-    apply plugin: 'jetty'
-    kapt 'com.github.bumptech.glide:compiler:4.8.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    kapt 'com.github.bumptech.glide:compiler:4.8.0'   // used for loading images
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0' // used for making api requests
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'   // used for making api requests
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation('com.github.mirrajabi:search-dialog:1.2.3') {
         transitive = true
         exclude group: 'com.android.support'
     }
-    compile 'com.android.support:support-annotations:28.0.0'
+    implementation 'com.android.support:mediarouter-v7:28.0.0'
+    implementation 'androidx.fragment:fragment-ktx:1.0.0'
 
 
 }
-apply plugin: 'com.google.gms.google-services'

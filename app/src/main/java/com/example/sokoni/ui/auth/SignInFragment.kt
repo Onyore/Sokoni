@@ -1,12 +1,12 @@
 package com.example.sokoni.ui.auth
 
-//import android.content.Context
-//import android.net.Uri
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.os.Parcel
+import android.os.Parcelable
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 
@@ -21,15 +21,25 @@ import com.example.sokoni.models.oauth.Profile
 import com.example.sokoni.models.oauth.custom.Resource
 import com.example.sokoni.models.oauth.custom.Status
 import com.google.android.material.snackbar.Snackbar
-import javax.xml.validation.Validator
+import kotlinx.android.synthetic.main.auth_fragment.signin
+import kotlinx.android.synthetic.main.fragment_forget_password.avi
+import kotlinx.android.synthetic.main.fragment_forget_password.backtoauth
+import kotlinx.android.synthetic.main.fragment_forget_password.signinback
+import kotlinx.android.synthetic.main.fragment_sign_in.*
+import com.example.sokoni.utils.Validator
 
 
-class SignInFragment : android.support.v4.app.Fragment(){
+class SignInFragment() : Fragment(), Parcelable {
     companion object{
         fun nextInstance() = SignInFragment()
 
     }
     private lateinit var viewModel: AuthViewModel
+
+    constructor(parcel: Parcel) : this() {
+
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_sign_in,container, false)
     }
@@ -51,7 +61,7 @@ class SignInFragment : android.support.v4.app.Fragment(){
                     activity?.finish()
 
                 }
-                )
+
 
 
     }
@@ -102,6 +112,28 @@ class SignInFragment : android.support.v4.app.Fragment(){
     }
 }
 
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
 
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<SignInFragment> {
+        override fun createFromParcel(parcel: Parcel): SignInFragment {
+            return SignInFragment(parcel)
+        }
+
+        override fun newArray(size: Int): Array<SignInFragment?> {
+            return arrayOfNulls(size)
+        }
+    }
+
+private fun Any.setOnclickListener(any: Any) {
+
+}
+
+            )}
 
 

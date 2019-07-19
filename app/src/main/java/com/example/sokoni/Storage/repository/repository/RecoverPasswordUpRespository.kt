@@ -1,7 +1,7 @@
 package com.example.sokoni.Storage.repository.repository
 
 import android.app.Application
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import android.content.Context
 import android.telecom.Call
 import android.util.Log

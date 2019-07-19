@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     tools:context=".MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appabar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/AppTheme.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/AppTheme.Toolbar"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+                    <androidx.appcompat.widget.SearchView
+                            android:id="@+id/search"
+                            style="@style/AppTheme.Toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toStartOf="@+id/cart"
+                            android:background="@android:color/white"
+                            android:drawablePadding="6dp"
+                            android:elevation="5dp"
+                            android:hint="Find Beast Deal"
+                            android:lines="1"
+                            android:tag="sticky"
+                            android:theme="@style/AppTheme.Toolbar"
+                            app:iconifiedByDefault="true"
+                            app:queryHint="Search for items"
+                            app:searchIcon="@drawable/ic_search_black_24dp" />
+                    <ImageView
+                            android:id="@+id/cart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_shopping_cart_white_24dp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,11 +1,14 @@
 package com.example.sokoni.models.oauth
 
+import androidx.room.Entity
+import androidx.room.Index
+
 
 @Entity(
         indices = [(Index("id"))],
         primaryKeys = ["id"]
 )
-class Profile {
+class Profile(trim: String) {
     @field:SerializedName("id")
     var id: Int? = 0
     @field:SerializedName("code")
@@ -30,3 +33,4 @@ class Profile {
     var updatedAt: String? = null
 
 annotation class SerializedName(val value: String)
+}
